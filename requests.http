@@ -1,0 +1,14 @@
+@localhost=http://localhost:8080/api
+
+### login
+POST {{localhost}}/identity/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "1234"
+}
+
+
+### logout
+POST {{localhost}}/identity/logout
