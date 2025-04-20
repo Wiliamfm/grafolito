@@ -1,14 +1,14 @@
 package main
 
 import (
+	"grafolito/backend/internal/identity/api"
 	"log"
 	"net/http"
-	identity "grafolito/backend/identity/api"
 )
 
 func main() {
 
-	identity.MapEndpoints()
+	api.MapEndpoints()
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("Not Found!"))
