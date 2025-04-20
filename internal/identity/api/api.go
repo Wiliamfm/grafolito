@@ -6,6 +6,7 @@ import (
 	"grafolito/backend/internal/identity/application/services"
 	"grafolito/backend/internal/identity/contracts/requests"
 	"grafolito/backend/internal/identity/contracts/responses"
+	"grafolito/backend/internal/shared/api/constants"
 	"net/http"
 )
 
@@ -34,7 +35,7 @@ func loginHandler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		w.WriteHeader(http.StatusBadRequest)
 		loginResponse = responses.ProblemDetails{
-			Type:     "https://tools.ietf.org/html/rfc2616#section-10",
+			Type:     constants.ProblemDetailBadRequestType,
 			Title:    "Login Error",
 			Detail:   err.Error(),
 			Instance: r.URL.String(),
@@ -47,7 +48,6 @@ func loginHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	w.WriteHeader(http.StatusOK)
 	w.Write(response)
 	return
 }
