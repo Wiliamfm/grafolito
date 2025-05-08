@@ -1,4 +1,4 @@
-@localhost=http://localhost:8080/api
+@localhost=http://localhost:9000/api
 
 ### login
 POST {{localhost}}/identity/login

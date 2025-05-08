@@ -1,1 +1,1 @@
-env $(cat .env | xargs) go run main.go
+env $(cat .env | xargs) go run cmd/http/main.go
